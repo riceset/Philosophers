@@ -54,7 +54,7 @@ struct s_rules
     int lifespan;
     int dining_duration;
     int rest_duration;
-    int min_meals;
+    unsigned int min_meals;
 };
 
 struct s_philo
