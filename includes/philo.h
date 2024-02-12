@@ -24,6 +24,8 @@
 #define ERR_MUTEX_INIT 5
 #define MSG_MUTEX_INIT "Error initializing mutex."
 
+#define ERR_THREAD_CREATE 6
+#define MSG_THREAD_CREATE "Error creating thread."
 //INCLUDES
 
 #include <stdio.h>
@@ -99,6 +101,9 @@ void set_dinner_status(t_dinner *dinner);
 void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
 bool can_initialize_forks(t_dinner *dinner);
 void initialize_philosophers(t_dinner *dinner);
+
+// can start dinner
+void start_dinner(t_dinner *dinner);
 
 //error handling
 void report_and_set_error(t_dinner *dinner, int code, char *msg);
