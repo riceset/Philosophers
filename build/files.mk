@@ -11,6 +11,7 @@ FILES			=	main.c \
 						dinner/set_dinner_status.c \
 						dinner/set_dinner_rules.c \
 						dinner/can_initialize_forks.c \
+						dinner/initialize_philosophers.c \
 						error_handling/report_and_set_error.c
 
 SRC_DIR 	= sources
