@@ -26,6 +26,9 @@
 
 #define ERR_THREAD_CREATE 6
 #define MSG_THREAD_CREATE "Error creating thread."
+
+#define ERR_THREAD_JOIN 7
+#define MSG_THREAD_JOIN "Error joining thread."
 //INCLUDES
 
 #include <stdio.h>
@@ -102,8 +105,9 @@ void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
 bool can_initialize_forks(t_dinner *dinner);
 void initialize_philosophers(t_dinner *dinner);
 
-// can start dinner
+// dinner
 void start_dinner(t_dinner *dinner);
+void end_dinner(t_dinner *dinner);
 
 //error handling
 void report_and_set_error(t_dinner *dinner, int code, char *msg);
