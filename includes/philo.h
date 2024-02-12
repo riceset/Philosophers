@@ -81,4 +81,7 @@ time_t us_to_ms(time_t us);
 //get time in ms
 time_t get_time_in_ms(void);
 
+//can prepare dinner
+void set_dinner_start_time(t_dinner *dinner);
+
 #endif
