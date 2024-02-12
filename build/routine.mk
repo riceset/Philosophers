@@ -8,10 +8,10 @@ $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ_DIR) $(TESTS_DIR)/*.o
 
 fclean:
-	$(RM) $(OBJ_DIR) $(NAME)
+	$(RM) $(OBJ_DIR) $(NAME) $(TEST_NAME)
 
 re: fclean all
 
