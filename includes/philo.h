@@ -78,6 +78,7 @@ bool correct_input(t_dinner *dinner, int argc, char **argv);
 bool incorrect_num_of_args(int argc);
 bool not_only_digits(char *str);
 bool wrong_num_philos(int i, int curr_arg);
+bool can_convert_str_to_int(t_dinner *dinner, const char *str, int *res);
 
 //helpers
 bool is_digit(int c);
