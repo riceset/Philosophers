@@ -6,6 +6,11 @@
 #define PHILO_MAX 200
 #define MIN_MEALS_NOT_SET (-1)
 
+//EXIT STATUSES
+#define SUCCESS 0
+#define ERR_MUTEX_INIT 1
+#define MSG_MUTEX_INIT "Error initializing mutex."
+
 //INCLUDES
 
 #include <stdio.h>
