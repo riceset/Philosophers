@@ -85,6 +85,7 @@ time_t get_time_in_ms(void);
 void set_dinner_start_time(t_dinner *dinner);
 void set_dinner_status(t_dinner *dinner);
 void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
+bool can_initialize_forks(t_dinner *dinner);
 
 //error handling
 void report_and_set_error(t_dinner *dinner, int code, char *msg);
