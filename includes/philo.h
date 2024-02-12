@@ -109,6 +109,9 @@ void initialize_philosophers(t_dinner *dinner);
 void start_dinner(t_dinner *dinner);
 void end_dinner(t_dinner *dinner);
 
+// routine
+void *philo_routine(void *arg);
+
 //error handling
 void report_and_set_error(t_dinner *dinner, int code, char *msg);
 
