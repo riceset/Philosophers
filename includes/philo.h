@@ -8,7 +8,11 @@
 
 //EXIT STATUSES
 #define SUCCESS 0
-#define ERR_MUTEX_INIT 1
+
+#define ERR_ATOI 1
+#define MSG_ATOI "Atoi error."
+
+#define ERR_MUTEX_INIT 2
 #define MSG_MUTEX_INIT "Error initializing mutex."
 
 //INCLUDES
@@ -55,5 +59,19 @@ struct s_dinner
 	t_philo philos[PHILO_MAX];
 	pthread_mutex_t forks[PHILO_MAX];
 };
+
+//PROTOTYPES
+
+//Validation
+bool correct_input(int argc, char **argv);
+
+//Validators
+bool incorrect_num_of_args(int argc);
+bool not_only_digits(char *str);
+bool wrong_num_philos(int i, int curr_arg);
+
+//helpers
+bool is_digit(int c);
+int my_atoi(const char *str);
 
 #endif

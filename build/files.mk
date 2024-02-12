@@ -1,4 +1,10 @@
-FILES			=	main.c
+FILES			=	main.c \
+						helpers/is_digit.c \
+						helpers/my_atoi.c \
+						input_validation/validators/incorrect_num_args.c \
+						input_validation/validators/wrong_num_philos.c \
+						input_validation/validators/not_only_digits.c \
+						input_validation/correct_input.c
 
 SRC_DIR 	= sources
 OBJ_DIR		=	objects

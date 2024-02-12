@@ -1,8 +1,9 @@
 #include "philo.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-  printf("Hello World\n");
+  if (correct_input(argc, argv))
+    return (EXIT_SUCCESS);
 
-  return (EXIT_SUCCESS);
+  return (EXIT_FAILURE);
 }
