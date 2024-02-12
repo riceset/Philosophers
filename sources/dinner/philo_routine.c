@@ -1,5 +1,19 @@
 #include "philo.h"
 
+void eat(t_philo *philo)
+{
+  (void) philo;
+}
+
+void rest(t_philo *philo)
+{
+  (void) philo;
+}
+void think(t_philo *philo)
+{
+  (void) philo;
+}
+
 void *philo_routine(void *arg)
 {
   unsigned int i;
