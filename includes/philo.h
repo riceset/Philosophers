@@ -83,5 +83,7 @@ time_t get_time_in_ms(void);
 
 //can prepare dinner
 void set_dinner_start_time(t_dinner *dinner);
+void set_dinner_status(t_dinner *dinner);
+void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
 
 #endif

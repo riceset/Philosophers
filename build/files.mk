@@ -7,7 +7,9 @@ FILES			=	main.c \
 						input_validation/correct_input.c \
 						time/conversion_to_ms.c \
 						time/get_time_in_ms.c \
-						dinner/set_dinner_start_time.c
+						dinner/set_dinner_start_time.c \
+						dinner/set_dinner_status.c \
+						dinner/set_dinner_rules.c
 
 SRC_DIR 	= sources
 OBJ_DIR		=	objects
