@@ -2,8 +2,10 @@
 
 int main(int argc, char **argv)
 {
-  if (correct_input(argc, argv))
-    return (EXIT_SUCCESS);
+  t_dinner dinner;
 
-  return (EXIT_FAILURE);
+  if (correct_input(&dinner, argc, argv))
+    can_prepare_dinner(&dinner, argc, argv);
+
+  return (dinner.exit_status);
 }

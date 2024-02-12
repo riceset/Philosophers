@@ -9,10 +9,19 @@
 //EXIT STATUSES
 #define SUCCESS 0
 
-#define ERR_ATOI 1
+#define ERR_NUM_ARGS 1
+#define MSG_NUM_ARGS "Incorrect number of arguments."
+
+#define ERR_NOT_ONLY_DIGITS 2
+#define MSG_NOT_ONLY_DIGITS "Not only digits."
+
+#define ERR_ATOI 3
 #define MSG_ATOI "Atoi error."
 
-#define ERR_MUTEX_INIT 2
+#define ERR_NUM_PHILOS 4
+#define MSG_NUM_PHILOS "Wrong number of philosophers."
+
+#define ERR_MUTEX_INIT 5
 #define MSG_MUTEX_INIT "Error initializing mutex."
 
 //INCLUDES
@@ -63,7 +72,7 @@ struct s_dinner
 //PROTOTYPES
 
 //validation
-bool correct_input(int argc, char **argv);
+bool correct_input(t_dinner *dinner, int argc, char **argv);
 
 //validators
 bool incorrect_num_of_args(int argc);
@@ -82,6 +91,8 @@ time_t us_to_ms(time_t us);
 time_t get_time_in_ms(void);
 
 //can prepare dinner
+bool can_prepare_dinner(t_dinner *dinner, int argc, char **argv);
+
 void set_dinner_start_time(t_dinner *dinner);
 void set_dinner_status(t_dinner *dinner);
 void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
