@@ -62,10 +62,10 @@ struct s_dinner
 
 //PROTOTYPES
 
-//Validation
+//validation
 bool correct_input(int argc, char **argv);
 
-//Validators
+//validators
 bool incorrect_num_of_args(int argc);
 bool not_only_digits(char *str);
 bool wrong_num_philos(int i, int curr_arg);
@@ -73,5 +73,12 @@ bool wrong_num_philos(int i, int curr_arg);
 //helpers
 bool is_digit(int c);
 int my_atoi(const char *str);
+
+//conversion to ms
+time_t s_to_ms(time_t s);
+time_t us_to_ms(time_t us);
+
+//get time in ms
+time_t get_time_in_ms(void);
 
 #endif
