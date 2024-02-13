@@ -61,7 +61,10 @@ struct s_philo
 {
     int id;
     pthread_t thread;
+    unsigned int forks[2];
     time_t last_meal_time;
+    unsigned int times_eaten;
+    pthread_mutex_t times_eaten_mutex;
     t_dinner *dinner;
 };
 
