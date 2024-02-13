@@ -2,18 +2,17 @@
 
 void *philo_routine(void *arg)
 {
-  unsigned int i;
   t_philo *philo;
 
   philo = (t_philo *)arg;
-  i = 0;
-  while (i < philo->dinner->rules.min_meals)
+
+  while (philo->dinner->stop == false)
   {
     eat(philo);
     rest(philo);
     think(philo);
-    i++;
   }
+  print_philo_status(philo, DEAD);
   return (NULL);
 }
 

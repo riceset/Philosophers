@@ -36,7 +36,6 @@
 typedef struct s_rules t_rules;
 typedef struct s_philo t_philo;
 typedef struct s_dinner t_dinner;
-typedef struct s_mutex t_mutex;
 typedef enum e_philo_status t_philo_status;
 typedef enum e_exit_status t_exit_status;
 
@@ -51,12 +50,6 @@ struct s_rules
     unsigned int min_meals;
 };
 
-struct s_mutex
-{
-  pthread_mutex_t last_meal_time;
-  pthread_mutex_t times_eaten;
-};
-
 struct s_philo
 {
     int id;
@@ -65,7 +58,8 @@ struct s_philo
     unsigned int times_eaten;
     time_t last_meal_time;
     t_dinner *dinner;
-    t_mutex mutex;
+    pthread_mutex_t last_meal_time_mutex;
+    pthread_mutex_t times_eaten_mutex;
 };
 
 struct s_dinner
@@ -74,6 +68,7 @@ struct s_dinner
 	t_rules rules;
   int exit_status;
 	t_philo philos[PHILO_MAX];
+  bool stop;
 	pthread_mutex_t forks[PHILO_MAX];
   pthread_t supervisor;
   pthread_mutex_t stop_mutex;
