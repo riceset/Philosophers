@@ -52,10 +52,18 @@ void take_forks(t_philo *philo)
   take_right_fork(philo);
 }
 
+void release_forks(t_philo *philo)
+{
+  pthread_mutex_unlock(&philo->dinner->forks[philo->forks[0]]);
+  pthread_mutex_unlock(&philo->dinner->forks[philo->forks[1]]);
+}
+
 void eat(t_philo *philo)
 {
+  take_forks(philo);
   print_philo_status(philo, EATING);
   life_check_and_wait(philo, philo->dinner->rules.dining_duration);
+  release_forks(philo);
 }
 
 void rest(t_philo *philo)
