@@ -19,7 +19,7 @@ void print_philo_status(t_philo *philo, t_philo_status status)
 		print_in_required_format(philo, MSG_TAKING_FORK);
 }
 
-void life_check_and_wait_for(t_philo *philo, time_t duration)
+void life_check_and_wait(t_philo *philo, time_t duration)
 {
   time_t time_to_wait_for;
 
@@ -34,16 +34,34 @@ void life_check_and_wait_for(t_philo *philo, time_t duration)
   }
 }
 
+void take_left_fork(t_philo *philo)
+{
+  pthread_mutex_lock(&philo->dinner->forks[philo->forks[0]]);
+  print_philo_status(philo, TAKING_FORK);
+}
+
+void take_right_fork(t_philo *philo)
+{
+  pthread_mutex_lock(&philo->dinner->forks[philo->forks[1]]);
+  print_philo_status(philo, TAKING_FORK);
+}
+
+void take_forks(t_philo *philo)
+{
+  take_left_fork(philo);
+  take_right_fork(philo);
+}
+
 void eat(t_philo *philo)
 {
   print_philo_status(philo, EATING);
-  life_check_and_wait_for(philo, philo->dinner->rules.dining_duration);
+  life_check_and_wait(philo, philo->dinner->rules.dining_duration);
 }
 
 void rest(t_philo *philo)
 {
   print_philo_status(philo, SLEEPING);
-  life_check_and_wait_for(philo, philo->dinner->rules.rest_duration);
+  life_check_and_wait(philo, philo->dinner->rules.rest_duration);
 }
 void think(t_philo *philo)
 {
