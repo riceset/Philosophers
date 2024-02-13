@@ -69,6 +69,7 @@ struct s_dinner
   int exit_status;
 	t_philo philos[PHILO_MAX];
 	pthread_mutex_t forks[PHILO_MAX];
+  pthread_t supervisor;
 };
 
 enum e_philo_status
@@ -132,6 +133,9 @@ void end_dinner(t_dinner *dinner);
 void *philo_routine(void *arg);
 void print_philo_status(t_philo *philo, t_philo_status status);
 void life_check_and_wait(t_philo *philo, time_t duration);
+
+//supervisor
+void *supervisor_routine(void *arg);
 
 //actions
 void take_forks(t_philo *philo);

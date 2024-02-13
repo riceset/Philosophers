@@ -15,4 +15,12 @@ void start_dinner(t_dinner *dinner)
     }
     i++;
   }
+  if (dinner->rules.philo_count > 1)
+  {
+    if (pthread_create(&dinner->supervisor, NULL, supervisor_routine, dinner) != SUCCESS)
+    {
+      report_and_set_error(dinner, ERR_THREAD_CREATE, MSG_THREAD_CREATE);
+      return ;
+    }
+  }
 }
