@@ -85,7 +85,7 @@ struct s_dinner
 	pthread_mutex_t forks[PHILO_MAX];
 };
 
-typedef enum e_philo_status
+enum e_philo_status
 {
   DEAD,
   EATING,

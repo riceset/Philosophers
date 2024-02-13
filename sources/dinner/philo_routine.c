@@ -1,20 +1,5 @@
 #include "philo.h"
 
-typedef enum e_philo_status
-{
-  DEAD,
-  EATING,
-  SLEEPING,
-  THINKING,
-  TAKING_FORK
-} t_philo_status;
-
-#define MSG_DEAD "died"
-#define MSG_EATING "is eating"
-#define MSG_SLEEPING "is sleeping"
-#define MSG_THINKING "is thinking"
-#define MSG_TAKING_FORK "has taken a fork"
-
 void print_in_required_format(t_philo *philo, char *action)
 {
   printf("%ld %d %s\n", get_time_in_ms() - philo->dinner->start_time, philo->id, action);
