@@ -56,6 +56,7 @@ struct s_philo
     pthread_t thread;
     unsigned int forks[2];
     time_t last_meal_time;
+    pthread_mutex_t last_meal_time_mutex;
     unsigned int times_eaten;
     pthread_mutex_t times_eaten_mutex;
     t_dinner *dinner;
@@ -121,6 +122,7 @@ void set_dinner_status(t_dinner *dinner);
 void set_dinner_rules(t_dinner *dinner, int argc, char **argv);
 bool can_initialize_forks(t_dinner *dinner);
 void initialize_philosophers(t_dinner *dinner);
+void assign_forks(t_philo *philo);
 
 // dinner
 void start_dinner(t_dinner *dinner);
