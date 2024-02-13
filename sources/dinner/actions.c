@@ -6,9 +6,9 @@ void eat(t_philo *philo)
   print_philo_status(philo, EATING);
   life_check_and_wait(philo, philo->dinner->rules.dining_duration);
 
-  pthread_mutex_lock(&philo->mutex.last_meal_time);
+  pthread_mutex_lock(&philo->last_meal_time_mutex);
   philo->last_meal_time = get_time_in_ms();
-  pthread_mutex_unlock(&philo->mutex.last_meal_time);
+  pthread_mutex_unlock(&philo->last_meal_time_mutex);
 
   release_forks(philo);
 }

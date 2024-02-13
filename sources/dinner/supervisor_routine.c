@@ -19,6 +19,7 @@ void *supervisor_routine(void *arg)
           dinner->stop = true;
           pthread_mutex_unlock(&dinner->stop_mutex);
         pthread_mutex_unlock(&dinner->philos[i].last_meal_time_mutex);
+        return (NULL);
       }
       pthread_mutex_unlock(&dinner->philos[i].last_meal_time_mutex);
       i++;
