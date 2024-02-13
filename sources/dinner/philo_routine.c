@@ -30,19 +30,20 @@ void life_check_and_wait_for(t_philo *philo, time_t duration)
   {
     //check if someone died
     //check the time
-
-    usleep(1000);
+    usleep(100);
   }
 }
 
 void eat(t_philo *philo)
 {
   print_philo_status(philo, EATING);
+  life_check_and_wait_for(philo, philo->dinner->rules.dining_duration);
 }
 
 void rest(t_philo *philo)
 {
   print_philo_status(philo, SLEEPING);
+  life_check_and_wait_for(philo, philo->dinner->rules.rest_duration);
 }
 void think(t_philo *philo)
 {
