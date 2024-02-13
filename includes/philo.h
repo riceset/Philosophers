@@ -76,6 +76,7 @@ struct s_dinner
 	t_philo philos[PHILO_MAX];
 	pthread_mutex_t forks[PHILO_MAX];
   pthread_t supervisor;
+  pthread_mutex_t stop_mutex;
 };
 
 enum e_philo_status
