@@ -6,28 +6,12 @@
 #define PHILO_MAX 200
 #define MIN_MEALS_NOT_SET (-1)
 
-//EXIT STATUSES
-#define SUCCESS 0
-
-#define ERR_NUM_ARGS 1
 #define MSG_NUM_ARGS "Incorrect number of arguments."
-
-#define ERR_NOT_ONLY_DIGITS 2
 #define MSG_NOT_ONLY_DIGITS "Not only digits."
-
-#define ERR_ATOI 3
 #define MSG_ATOI "Atoi error."
-
-#define ERR_NUM_PHILOS 4
 #define MSG_NUM_PHILOS "Wrong number of philosophers."
-
-#define ERR_MUTEX_INIT 5
 #define MSG_MUTEX_INIT "Error initializing mutex."
-
-#define ERR_THREAD_CREATE 6
 #define MSG_THREAD_CREATE "Error creating thread."
-
-#define ERR_THREAD_JOIN 7
 #define MSG_THREAD_JOIN "Error joining thread."
 
 #define MSG_DEAD "died"
@@ -53,6 +37,7 @@ typedef struct s_rules t_rules;
 typedef struct s_philo t_philo;
 typedef struct s_dinner t_dinner;
 typedef enum e_philo_status t_philo_status;
+typedef enum e_exit_status t_exit_status;
 
 //STRUCTS
 
@@ -92,6 +77,18 @@ enum e_philo_status
   SLEEPING,
   THINKING,
   TAKING_FORK
+};
+
+enum e_exit_status
+{
+  SUCCESS,
+  ERR_NUM_ARGS,
+  ERR_NOT_ONLY_DIGITS,
+  ERR_ATOI,
+  ERR_NUM_PHILOS,
+  ERR_MUTEX_INIT,
+  ERR_THREAD_CREATE,
+  ERR_THREAD_JOIN
 };
 
 //PROTOTYPES
