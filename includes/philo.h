@@ -29,6 +29,13 @@
 
 #define ERR_THREAD_JOIN 7
 #define MSG_THREAD_JOIN "Error joining thread."
+
+#define MSG_DEAD "died"
+#define MSG_EATING "is eating"
+#define MSG_SLEEPING "is sleeping"
+#define MSG_THINKING "is thinking"
+#define MSG_TAKING_FORK "has taken a fork"
+
 //INCLUDES
 
 #include <stdio.h>
@@ -45,6 +52,7 @@
 typedef struct s_rules t_rules;
 typedef struct s_philo t_philo;
 typedef struct s_dinner t_dinner;
+typedef enum e_philo_status t_philo_status;
 
 //STRUCTS
 
@@ -75,6 +83,15 @@ struct s_dinner
   int exit_status;
 	t_philo philos[PHILO_MAX];
 	pthread_mutex_t forks[PHILO_MAX];
+};
+
+typedef enum e_philo_status
+{
+  DEAD,
+  EATING,
+  SLEEPING,
+  THINKING,
+  TAKING_FORK
 };
 
 //PROTOTYPES
