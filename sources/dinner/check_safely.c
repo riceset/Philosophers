@@ -1,11 +1,11 @@
 #include "philo.h"
 
-bool check_end_condition_safely(pthread_mutex_t *mutex, bool *end_flag)
+bool check_stop_condition_safely(pthread_mutex_t *mutex, bool *stop_flag)
 {
   bool after_check;
 
   pthread_mutex_lock(mutex);
-  after_check = *end_flag;
+  after_check = *stop_flag;
   pthread_mutex_unlock(mutex);
 
   return (after_check);

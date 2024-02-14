@@ -156,12 +156,12 @@ void think(t_philo *philo);
 void report_and_set_error(t_dinner *dinner, int code, char *msg);
 
 //check safely
-bool check_end_condition_safely(pthread_mutex_t *mutex, bool *end_flag);
+bool check_stop_condition_safely(pthread_mutex_t *mutex, bool *stop_flag);
 unsigned int check_times_eaten_safely(pthread_mutex_t *mutex, unsigned int *times_eaten);
 time_t check_last_meal_time_safely(pthread_mutex_t *mutex, time_t *last_meal_time);
 
 //update safely
-void update_end_condition_safely(pthread_mutex_t *mutex, bool *end_flag, bool new_value);
+void update_stop_condition_safely(pthread_mutex_t *mutex, bool *stop_flag, bool new_value);
 void update_times_eaten_safely(pthread_mutex_t *mutex, unsigned int *times_eaten, unsigned int new_value);
 void update_last_meal_time_safely(pthread_mutex_t *mutex, time_t *last_meal_time, time_t new_value);
 
