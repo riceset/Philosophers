@@ -2,7 +2,7 @@
 
 static void print_in_required_format(t_philo *philo, char *action)
 {
-  printf("%ld %d %s\n", get_time_in_ms() - philo->dinner->start_time, philo->id, action);
+  printf("%ld %d %s\n", get_time_in_ms() - philo->dinner->rules.start_time, philo->id, action);
 }
 
 void print_philo_status(t_philo *philo, t_philo_status status)
