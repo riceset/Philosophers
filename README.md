@@ -11,7 +11,7 @@
 > <i>programming. For the project's mandatory part, we must find a solution to the problem using only threads and mutexes. For the bonus part, we must create a second</i>
 > <i>program that uses processes and semaphores.</i>
 
-## The Diner Structure
+## The Dinner Structure
 
 ```mermaid
 flowchart TB
