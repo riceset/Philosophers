@@ -19,7 +19,30 @@ void rest(t_philo *philo)
   life_check_and_wait(philo, philo->dinner->rules.rest_duration);
 }
 
+time_t calculate_thinking_duration(t_philo *philo)
+{
+  time_t lifespan;
+  time_t thinking_duration;
+  time_t fasting_duration;
+  time_t dining_duration;
+
+  pthread_mutex_lock(&philo->last_meal_time_mutex);
+  lifespan = philo->dinner->rules.lifespan;
+  fasting_duration = get_time_in_ms() - philo->last_meal_time;
+  dining_duration = philo->dinner->rules.dining_duration;
+  thinking_duration = (lifespan - fasting_duration - dining_duration) / 2;
+
+  if (thinking_duration <= 0)
+    thinking_duration = 1;
+  if (thinking_duration > 600)
+    thinking_duration = 200;
+
+  pthread_mutex_unlock(&philo->last_meal_time_mutex);
+  return (thinking_duration);
+}
+
 void think(t_philo *philo)
 {
   print_philo_status(philo, THINKING);
+  life_check_and_wait(philo, calculate_thinking_duration(philo));
 }

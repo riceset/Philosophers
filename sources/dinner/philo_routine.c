@@ -1,18 +1,13 @@
 #include "philo.h"
 
-bool should_terminate(t_dinner *dinner)
+static bool guard_check_stop(t_dinner *dinner)
 {
+  bool stop;
+
   pthread_mutex_lock(&dinner->stop_mutex);
-  if (dinner->stop == false)
-  {
-    pthread_mutex_unlock(&dinner->stop_mutex);
-    return (true);
-  }
-  else
-  {
-    pthread_mutex_unlock(&dinner->stop_mutex);
-    return (false);
-  }
+  stop = dinner->stop;
+  pthread_mutex_unlock(&dinner->stop_mutex);
+  return (stop);
 }
 
 void *philo_routine(void *arg)
@@ -21,7 +16,7 @@ void *philo_routine(void *arg)
 
   philo = (t_philo *)arg;
 
-  while (should_terminate(philo->dinner))
+  while (guard_check_stop(philo->dinner) == false)
   {
     eat(philo);
     rest(philo);
