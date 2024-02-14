@@ -6,9 +6,7 @@ void eat(t_philo *philo)
   print_philo_status(philo, EATING);
   life_check_and_wait(philo, philo->dinner->rules.dining_duration);
 
-  pthread_mutex_lock(&philo->last_meal_time_mutex);
-  philo->last_meal_time = get_time_in_ms();
-  pthread_mutex_unlock(&philo->last_meal_time_mutex);
+  update_last_meal_time_safely(&philo->last_meal_time_mutex, &philo->last_meal_time, get_time_in_ms());
 
   release_forks(philo);
 }
@@ -26,9 +24,8 @@ time_t calculate_thinking_duration(t_philo *philo)
   time_t fasting_duration;
   time_t dining_duration;
 
-  pthread_mutex_lock(&philo->last_meal_time_mutex);
   lifespan = philo->dinner->rules.lifespan;
-  fasting_duration = get_time_in_ms() - philo->last_meal_time;
+  fasting_duration = get_time_in_ms() - check_last_meal_time_safely(&philo->last_meal_time_mutex, &philo->last_meal_time);
   dining_duration = philo->dinner->rules.dining_duration;
   thinking_duration = (lifespan - fasting_duration - dining_duration) / 2;
 
@@ -37,7 +34,6 @@ time_t calculate_thinking_duration(t_philo *philo)
   if (thinking_duration > 600)
     thinking_duration = 200;
 
-  pthread_mutex_unlock(&philo->last_meal_time_mutex);
   return (thinking_duration);
 }
 
