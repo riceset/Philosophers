@@ -2,6 +2,7 @@
 
 void set_dinner_rules(t_dinner *dinner, int argc, char **argv)
 {
+  set_dinner_start_time(dinner);
   dinner->rules.philo_count = my_atoi(argv[1]);
   dinner->rules.lifespan = my_atoi(argv[2]);
   dinner->rules.dining_duration = my_atoi(argv[3]);

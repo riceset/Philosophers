@@ -43,6 +43,7 @@ typedef enum e_exit_status t_exit_status;
 
 struct s_rules
 {
+    time_t start_time;
     int philo_count;
     int lifespan;
     int dining_duration;
@@ -64,14 +65,16 @@ struct s_philo
 
 struct s_dinner
 {
-	time_t start_time;
 	t_rules rules;
-  int exit_status;
 	t_philo philos[PHILO_MAX];
-  bool stop;
 	pthread_mutex_t forks[PHILO_MAX];
+
   pthread_t supervisor;
+
+  bool stop;
   pthread_mutex_t stop_mutex;
+
+  int exit_status;
 };
 
 enum e_philo_status

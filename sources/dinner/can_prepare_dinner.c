@@ -13,7 +13,6 @@ bool can_initialize_stop_mutex(t_dinner *dinner)
 
 bool can_prepare_dinner(t_dinner *dinner, int argc, char **argv)
 {
-  set_dinner_start_time(dinner);
   set_dinner_status(dinner);
   if (correct_input(dinner, argc, argv))
   {
