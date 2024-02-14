@@ -15,7 +15,7 @@
 
 ```mermaid
 flowchart TB
-    A[("Dinner")]
+    A("Dinner")
     B{"Forks"}
     C("Supervisor")
     D{"Stop"}
