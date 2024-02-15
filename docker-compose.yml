@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  my-app:
+    build: .
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - /Users/riceset/philosophers/:/usr/src/philosophers
+    stdin_open: true
+    tty: true

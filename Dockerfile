@@ -4,7 +4,8 @@ RUN apt-get update
 RUN apt-get install -y \
 build-essential \
 gdb \
-valgrind
+valgrind \
+vim
 
 WORKDIR /usr/src/philosophers
 
