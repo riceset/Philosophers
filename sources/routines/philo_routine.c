@@ -15,4 +15,3 @@ void *philo_routine(void *arg)
   print_philo_status(philo, DEAD);
   return (NULL);
 }
-
