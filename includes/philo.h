@@ -140,6 +140,11 @@ void end_dinner(t_dinner *dinner);
 
 // routine
 void *philo_routine(void *arg);
+
+void eat(t_philo *philo);
+void rest(t_philo *philo);
+void think(t_philo *philo);
+
 void print_philo_status(t_philo *philo, t_philo_status status);
 void life_check_and_wait(t_philo *philo, time_t duration);
 
