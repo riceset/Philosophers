@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:40:50 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 18:51:34 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 19:17:56 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	*supervisor_routine(void *arg)
 	t_dinner	*dinner;
 
 	dinner = (t_dinner *)arg;
-	allign_start_times(dinner->rules.start_time);
+	align_start_times(dinner->rules.start_time);
 	while (true)
 	{
 		i = 0;

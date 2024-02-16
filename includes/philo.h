@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:05 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 18:40:30 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 19:17:35 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ bool						can_convert_str_to_int(t_dinner *dinner,
 bool						is_digit(int c);
 int							my_atoi(const char *str);
 
-void						allign_start_times(time_t start_time);
+void						align_start_times(time_t start_time);
 // conversion to ms
 time_t						s_to_ms(time_t s);
 time_t						us_to_ms(time_t us);
