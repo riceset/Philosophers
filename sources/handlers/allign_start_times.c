@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eat.c                                              :+:      :+:    :+:   */
+/*   allign_start_times.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 10:41:01 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 18:46:22 by tkomeno          ###   ########.fr       */
+/*   Created: 2024/02/16 18:40:01 by tkomeno           #+#    #+#             */
+/*   Updated: 2024/02/16 18:40:08 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	eat(t_philo *philo)
+void	allign_start_times(time_t start_time)
 {
-	take_forks(philo);
-	print_philo_status(philo, EATING);
-	life_check_and_wait(philo, philo->dinner->rules.dining_duration);
-	update_times_eaten_safely(&philo->times_eaten_mutex, &philo->times_eaten,
-		philo->times_eaten + 1);
-	update_last_meal_time_safely(&philo->last_meal_time_mutex,
-		&philo->last_meal_time, get_time_in_ms());
-	release_forks(philo);
+	while (get_time_in_ms() < start_time)
+		continue ;
 }
