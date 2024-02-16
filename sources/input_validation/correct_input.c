@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:39:42 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 10:51:24 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:57:29 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool	correct_input(t_dinner *dinner, int argc, char **argv)
 			return (false);
 		if (!can_convert_str_to_int(dinner, argv[i], &curr_arg))
 			return (false);
-		if (wrong_num_philos(i, curr_arg, dinner))
+		if (wrong_num(i, curr_arg, dinner))
 			return (false);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:05 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 14:42:58 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:56:59 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 // DEFINES
 
-# define PHILO_MAX 200
+# define PHILO_MAX 250
 # define MIN_MEALS_NOT_SET -1
 
 # define MSG_NUM_ARGS "Incorrect number of arguments."
 # define MSG_NOT_ONLY_DIGITS "Not only digits."
 # define MSG_ATOI "Atoi error."
 # define MSG_NUM_PHILOS "Wrong number of philosophers."
+# define MSG_NUM "Argument must be positive"
 # define MSG_MUTEX_INIT "Error initializing mutex."
 # define MSG_THREAD_CREATE "Error creating thread."
 # define MSG_THREAD_JOIN "Error joining thread."
@@ -108,6 +109,7 @@ enum						e_exit_status
 	ERR_NOT_ONLY_DIGITS,
 	ERR_ATOI,
 	ERR_NUM_PHILOS,
+	ERR_NUM,
 	ERR_MUTEX_INIT,
 	ERR_THREAD_CREATE,
 	ERR_THREAD_JOIN
@@ -122,7 +124,7 @@ bool						correct_input(t_dinner *dinner, int argc,
 // validators
 bool						incorrect_num_of_args(int argc, t_dinner *dinner);
 bool						not_only_digits(char *str, t_dinner *dinner);
-bool						wrong_num_philos(int i, int curr_arg,
+bool						wrong_num(int i, int curr_arg,
 								t_dinner *dinner);
 bool						can_convert_str_to_int(t_dinner *dinner,
 								const char *str, int *res);
