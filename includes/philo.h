@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/16 10:53:05 by tkomeno           #+#    #+#             */
+/*   Updated: 2024/02/16 10:53:07 by tkomeno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -108,9 +120,10 @@ bool						correct_input(t_dinner *dinner, int argc,
 								char **argv);
 
 // validators
-bool						incorrect_num_of_args(int argc);
-bool						not_only_digits(char *str);
-bool						wrong_num_philos(int i, int curr_arg);
+bool						incorrect_num_of_args(int argc, t_dinner *dinner);
+bool						not_only_digits(char *str, t_dinner *dinner);
+bool						wrong_num_philos(int i, int curr_arg,
+								t_dinner *dinner);
 bool						can_convert_str_to_int(t_dinner *dinner,
 								const char *str, int *res);
 
@@ -130,6 +143,7 @@ bool						can_prepare_dinner(t_dinner *dinner, int argc,
 								char **argv);
 
 bool						can_initialize_stop_mutex(t_dinner *dinner);
+bool						can_initialize_print_mutex(t_dinner *dinner);
 void						set_dinner_start_time(t_dinner *dinner);
 void						initialize_exit_status(t_dinner *dinner);
 void						set_dinner_rules(t_dinner *dinner, int argc,

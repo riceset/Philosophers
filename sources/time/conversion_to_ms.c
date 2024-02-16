@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   conversion_to_ms.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/16 10:41:47 by tkomeno           #+#    #+#             */
+/*   Updated: 2024/02/16 10:41:49 by tkomeno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
-time_t s_to_ms(time_t s)
+time_t	s_to_ms(time_t s)
 {
-  return (s * 1000);
+	return (s * 1000);
 }
 
-time_t us_to_ms(time_t us)
+time_t	us_to_ms(time_t us)
 {
-  return (us / 1000);
+	return (us / 1000);
 }
