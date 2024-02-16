@@ -26,6 +26,7 @@ flowchart TB
     A --- C
     A --- D
     A --- E
+    A --- F
 
     subgraph Rules
 		R0("Start Time")
