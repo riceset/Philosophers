@@ -6,13 +6,13 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:40:33 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 10:40:34 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:08:54 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	update_end_condition_safely(pthread_mutex_t *mutex, bool *end_flag,
+void	update_stop_condition_safely(pthread_mutex_t *mutex, bool *end_flag,
 		bool new_value)
 {
 	pthread_mutex_lock(mutex);

@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:39:29 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 10:39:31 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:18:04 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	print_in_required_format(t_philo *philo, char *action)
 
 void	print_philo_status(t_philo *philo, t_philo_status status)
 {
+	if (check_stop_condition_safely(&philo->dinner->stop_mutex, &philo->dinner->stop))
+		return ;
 	if (status == DEAD)
 		print_in_required_format(philo, MSG_DEAD);
 	else if (status == EATING)

@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:40:46 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 14:42:07 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:18:41 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	*philo_routine(void *arg)
 		rest(philo);
 		think(philo);
 	}
-	print_philo_status(philo, DEAD);
 	return (NULL);
 }
