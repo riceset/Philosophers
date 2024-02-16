@@ -20,6 +20,7 @@ flowchart TB
     C("Supervisor")
     D{"Stop"}
     E("Exit Status")
+    F{"Print"}
 
     A --- B
     A --- C
