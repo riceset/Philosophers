@@ -148,6 +148,9 @@ void think(t_philo *philo);
 void print_philo_status(t_philo *philo, t_philo_status status);
 void life_check_and_wait(t_philo *philo, time_t duration);
 
+bool can_create_thread(pthread_t *thread, void *(*routine)(void *), void *arg);
+bool can_join_thread(pthread_t thread);
+
 //supervisor
 void *supervisor_routine(void *arg);
 
