@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   release_forks.c                                    :+:      :+:    :+:   */
+/*   lonely_philosopher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 10:41:14 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 14:35:23 by tkomeno          ###   ########.fr       */
+/*   Created: 2024/02/16 14:42:30 by tkomeno           #+#    #+#             */
+/*   Updated: 2024/02/16 14:42:38 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	release_left_fork(t_philo *philo)
+void	*lonely_philosopher(t_philo *philo)
 {
+	pthread_mutex_lock(&philo->dinner->forks[philo->forks[0]]);
+	print_philo_status(philo, TAKING_FORK);
+	life_check_and_wait(philo, philo->dinner->rules.lifespan);
+	print_philo_status(philo, DEAD);
 	pthread_mutex_unlock(&philo->dinner->forks[philo->forks[0]]);
-}
-
-void	release_right_fork(t_philo *philo)
-{
-	pthread_mutex_unlock(&philo->dinner->forks[philo->forks[1]]);
-}
-
-void	release_forks(t_philo *philo)
-{
-	release_left_fork(philo);
-	release_right_fork(philo);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: tkomeno <tkomeno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:05 by tkomeno           #+#    #+#             */
-/*   Updated: 2024/02/16 10:53:07 by tkomeno          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:42:58 by tkomeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ void						end_dinner(t_dinner *dinner);
 
 // routine
 void						*philo_routine(void *arg);
+void						*lonely_philosopher(t_philo *philo);
 
 void						eat(t_philo *philo);
 void						rest(t_philo *philo);
@@ -176,7 +177,11 @@ bool						can_join_thread(pthread_t thread);
 void						*supervisor_routine(void *arg);
 
 // actions
+void						take_left_forks(t_philo *philo);
+void						take_right_forks(t_philo *philo);
 void						take_forks(t_philo *philo);
+void						release_left_forks(t_philo *philo);
+void						release_right_forks(t_philo *philo);
 void						release_forks(t_philo *philo);
 void						eat(t_philo *philo);
 void						rest(t_philo *philo);
