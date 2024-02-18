@@ -366,7 +366,7 @@ ID: 3 L: 2 R: 0
 
 #### Table representation
 
-![[Drawing 2024-02-10 18.22.54.excalidraw|center]]
+![image](https://github.com/riceset/Philosophers/assets/48802655/690f5e86-b322-40b6-bfc8-7820aceb05f5)
 
 ## Displaying the timestamps
 
@@ -888,3 +888,5 @@ bool	can_join_thread(pthread_t thread)
 	return (true);
 }
 ```
+
+![cover](https://github.com/riceset/Philosophers/assets/48802655/7fe89dc4-5b7a-4947-9315-f4bfc54f9369)
