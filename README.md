@@ -376,7 +376,7 @@ By accessing `tv_sec` and `tv_usec`, both members of `struct timeval`, we can ca
 
 $$
 \begin{align*}
-T_{ms} \; = \; (T_{s} \; \times \; 10^3) \; + \; \frac{T_{\mu s}}{10^3}
+T_{ms} = (T_{s} \times 10^3) + \frac{T_{\mu s}}{10^3}
 \end{align*}
 $$
 
